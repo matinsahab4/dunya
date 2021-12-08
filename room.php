@@ -2,15 +2,7 @@
 		session_start();
     ob_start();
 	if (!isset($_SESSION['sadmin'])) {
-		header('location: logout.php');
-	}
-	require('conn.php');
-	include('admintop.php');
-  // ************************************** INSERTING A ROOM - SECTION ***************************************
-		if (isset($_POST['room-id'])) {
-		$rno = $_POST['room-id'];
-		$rfloor = $_POST['room-floor'];
-    $rbed = $_POST['beds'];
+I have made some changes
     $rbath = $_POST['bathroom'];
 		$rprice = $_POST['room-price'];
 		$command = "INSERT INTO `room-specs` (`room-id`, `room-floor`, `beds`, `bathroom`, `room-price`) VALUES ('$rno', '$rfloor', '$rbed', '$rbath', '$rprice')";

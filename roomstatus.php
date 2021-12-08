@@ -1,22 +1,4 @@
-<?php 
-		ob_start();
-		session_start();
-	if (!isset($_SESSION['scashier'])) {
-		header('location: logout.php');
-	}
-	require('conn.php');
-	include('cashiertop.php');
-	$scommand = "SELECT * FROM `status` ORDER BY `room-id` ASC";
-	$squery = mysqli_query($con, $scommand);
-	if (isset($_POST['lai'])) {
-		foreach ($_POST as $key => $value) {
-		$command = "UPDATE `status` SET `room-status` = '1' WHERE `room-id` = $key";
-		$query = mysqli_query($con,$command);
-		}
-		header('location: roomstatus.php?upd=Status Updated');
-	}
 
-?>
 	<!-- // ********************************************* ROOM DISPLAY - SECTION *********************************** -->
 <!DOCTYPE html>
 <html>
